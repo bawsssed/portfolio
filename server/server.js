@@ -9,12 +9,6 @@ const PORT = process.env.PORT || 3001;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const MY_EMAIL = process.env.MY_EMAIL;
 
-const ALLOWED_ORIGINS = [
-  "http://localhost:5173",
-  "http://localhost:3000",
-  "https://bawsed.vercel.app",
-];
-
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 5;
 
@@ -34,13 +28,9 @@ app.set("trust proxy", 1);
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin) return callback(null, true);
-      if (ALLOWED_ORIGINS.includes(origin)) return callback(null, true);
-      return callback(new Error("Not allowed by CORS"));
-    },
+    origin: "*",
     methods: ["POST", "GET", "OPTIONS"],
-    credentials: false,
+    allowedHeaders: ["Content-Type"],
   })
 );
 
