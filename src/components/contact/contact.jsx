@@ -10,6 +10,7 @@ const emptyForm = {
   email: "",
   projectType: "",
   message: "",
+  website: "",
 };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -130,6 +131,24 @@ const Contact = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="contact__form" noValidate>
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={update("website")}
+                  style={{
+                    position: "absolute",
+                    left: "-9999px",
+                    opacity: 0,
+                    height: 0,
+                    width: 0,
+                    pointerEvents: "none",
+                  }}
+                  aria-hidden="true"
+                />
+
                 <FormField
                   index="01"
                   label="NAME"
@@ -277,7 +296,13 @@ const Contact = () => {
 
             <div className="contact__description">
               <span>HAVE A PROJECT IN MIND?</span>
-              <p>Have an idea, a question,{`\n`}or simply want to talk?{`\n`}<br />Let's create something meaningful.</p>
+              <p>
+                Have an idea, a question,
+                <br />
+                or simply want to talk?
+                <br />
+                Let's create something meaningful.
+              </p>
             </div>
 
             <div className="contact__contacts">
