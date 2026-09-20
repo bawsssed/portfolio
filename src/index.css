@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-display: "Syne", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+  --font-brand: "Ethnocentric", sans-serif;
+}
+
+@font-face {
+  font-family: 'Ethnocentric';
+  src: url('./assets/ethnocentric rg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #050505;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  background: #050505;
+  color: #f4f4f4;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root,
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body,
+button,
+input,
+textarea {
+  font-size: 16px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, .55);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

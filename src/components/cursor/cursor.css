@@ -1,0 +1,47 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 0;
+  height: 0;
+  pointer-events: none !important;
+  mix-blend-mode: difference;
+  will-change: transform, opacity;
+}
+
+.cursor,
+.cursor * {
+  pointer-events: none !important;
+}
+
+.cursor__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: #fff;
+  transform-origin: center;
+  transition: width .18s ease, height .18s ease, margin .18s ease;
+}
+
+.cursor__dot.is-hover {
+  width: 12px;
+  height: 12px;
+  margin: -5px 0 0 -5px;
+  background: #fff;
+}
+
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    display: none;
+  }
+}
